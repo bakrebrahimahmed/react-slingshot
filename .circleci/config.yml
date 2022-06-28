@@ -8,10 +8,9 @@ jobs:
     steps:
       - checkout
       - run: npm i
-      - run: npm update
       - save_cache:
           key: "npm-packages"
-          paths: ~/modules
+          paths: /src/node_modules
       - run: npm run lint
   test:
     <<: *defaults
